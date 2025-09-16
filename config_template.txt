@@ -1,0 +1,23 @@
+# Environment Variables Configuration Template
+# Copy this file to .env and fill in your actual API keys
+
+# OpenAI API Configuration (REQUIRED)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# Optional: Model Configuration
+# OPENAI_MODEL=gpt-4o
+# OPENAI_TEMPERATURE=0
+
+# Optional: Other API Keys (for future features)
+# GOOGLE_MAPS_API_KEY=your_google_maps_api_key_here
+# WEATHER_API_KEY=your_weather_api_key_here
+
+# Optional: Application Settings
+# DEBUG_MODE=false
+# MAX_RETRIES=3
+
+# Instructions:
+# 1. Copy this file to .env
+# 2. Replace 'your_openai_api_key_here' with your actual OpenAI API key
+# 3. Uncomment and fill in any other keys you want to use
+# 4. Never commit the .env file to version control
