@@ -70,10 +70,10 @@ A Python-based agent that analyzes Airbnb market data across Sydney, Melbourne, 
 ### Using the Agent Programmatically
 
 ```python
-from src.agent import create_main_agent
+from src.agent import create_main_agent, create_rag_tool
 
-# Example questions you can ask:
-questions = [
+# Example quantitative questions
+quantitative_questions = [
     "What is the average price of Airbnb listings in Sydney?",
     "Which city has the most expensive listings?",
     "What are the top 5 neighborhoods by average price in Melbourne?",
@@ -81,9 +81,24 @@ questions = [
     "What is the price distribution across all cities?"
 ]
 
-# Get insights
-for question in questions:
+# Get quantitative insights
+for question in quantitative_questions:
     response = create_main_agent(question)
+    print(f"Q: {question}")
+    print(f"A: {response}\n")
+
+# Example qualitative questions using RAG
+rag_tool = create_rag_tool()
+qualitative_questions = [
+    "find properties with dedicated workspace",
+    "show me pet-friendly listings",
+    "properties with ocean views",
+    "places near public transportation"
+]
+
+# Get qualitative insights
+for question in qualitative_questions:
+    response = rag_tool.func(question)
     print(f"Q: {question}")
     print(f"A: {response}\n")
 ```
@@ -111,6 +126,8 @@ The processed dataset contains **49,766 Airbnb listings** across three Australia
 - **Web Interface**: User-friendly Streamlit UI with interactive sidebar
 - **Example Questions**: Pre-built question templates for easy exploration
 - **Real-time Analysis**: Instant responses with loading indicators
+- **RAG System**: Semantic search for qualitative property features and amenities
+- **Vector Search**: OpenAI embeddings with Chroma vector store for intelligent property discovery
 
 ## Requirements
 
